@@ -1,0 +1,44 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+solc = "0.8.26"
+optimizer = true
+optimizer_runs = 200
+via_ir = true
+ffi = true
+
+# Remappings for cleaner imports
+remappings = [
+    "@openzeppelin/=lib/openzeppelin-contracts/",
+    "@uniswap/v4-periphery/=lib/v4-periphery/",
+    "@uniswap/v4-core/=lib/v4-periphery/lib/v4-core/",
+    "@chainlink/=lib/chainlink-brownie-contracts/",
+    "@circle-fin/=lib/evm-cctp-contracts/",
+    "forge-std/=lib/forge-std/src/"
+]
+
+# RPC endpoints for different networks  
+[rpc_endpoints]
+mainnet = "https://eth-mainnet.g.alchemy.com/v2/${ALCHEMY_API_KEY}"
+sepolia = "https://eth-sepolia.g.alchemy.com/v2/-h2-JZZFDFZS_s_4N6hzIl8f0gUJePBt"
+arbitrum = "https://arb-mainnet.g.alchemy.com/v2/${ALCHEMY_API_KEY}"
+arbitrum_sepolia = "https://arb-sepolia.g.alchemy.com/v2/-h2-JZZFDFZS_s_4N6hzIl8f0gUJePBt"  
+base = "https://base-mainnet.g.alchemy.com/v2/${ALCHEMY_API_KEY}"
+base_sepolia = "https://base-sepolia.g.alchemy.com/v2/-h2-JZZFDFZS_s_4N6hzIl8f0gUJePBt"
+optimism_sepolia = "https://opt-sepolia.g.alchemy.com/v2/-h2-JZZFDFZS_s_4N6hzIl8f0gUJePBt"
+polygon = "https://polygon-mainnet.g.alchemy.com/v2/${ALCHEMY_API_KEY}"
+polygon_amoy = "https://polygon-amoy.g.alchemy.com/v2/-h2-JZZFDFZS_s_4N6hzIl8f0gUJePBt"
+unichain_sepolia = "https://unichain-sepolia.g.alchemy.com/v2/-h2-JZZFDFZS_s_4N6hzIl8f0gUJePBt"
+
+# Etherscan API keys for verification
+[etherscan]
+mainnet = { key = "${ETHERSCAN_API_KEY}" }
+sepolia = { key = "2R9Q3PCV8WW91ZY9R4A97JTG1R6UKCBZCR" }
+arbitrum = { key = "${ARBISCAN_API_KEY}" }
+arbitrum_sepolia = { key = "2R9Q3PCV8WW91ZY9R4A97JTG1R6UKCBZCR" }
+base = { key = "${BASESCAN_API_KEY}" }
+base_sepolia = { key = "2R9Q3PCV8WW91ZY9R4A97JTG1R6UKCBZCR" }
+optimism_sepolia = { key = "2R9Q3PCV8WW91ZY9R4A97JTG1R6UKCBZCR" }
+polygon = { key = "${POLYGONSCAN_API_KEY}" }
+polygon_amoy = { key = "2R9Q3PCV8WW91ZY9R4A97JTG1R6UKCBZCR" }
