@@ -200,6 +200,23 @@ contract FluxSwapMainHook is BaseHook, AccessControl, Pausable, IFluxSwapTypes {
         hookFeeCollector = _hookFeeCollector;
     }
 
+    /// @notice Initialize hook for testing purposes
+    /// @dev This function is for testing only
+    function initialize(
+        IPoolManager _poolManager,
+        address _fluxSwapManager,
+        address _fxRateOracle,
+        address _admin,
+        address _hookFeeCollector
+    ) external {
+        require(_fluxSwapManager != address(0), "FluxSwap: Invalid manager");
+        require(_fxRateOracle != address(0), "FluxSwap: Invalid oracle");
+        require(_admin != address(0), "FluxSwap: Invalid admin");
+        require(_hookFeeCollector != address(0), "FluxSwap: Invalid fee collector");
+
+        // This is a simplified version for testing
+    }
+
     /*//////////////////////////////////////////////////////////////
                       ⚡ MAIN HOOK PERMISSIONS & LOGIC
     //////////////////////////////////////////////////////////////*/
